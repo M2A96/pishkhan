@@ -3,8 +3,7 @@ activityCompose = "1.10.1"
 androidTools = "31.8.2"
 androidxTest = "1.6.1"
 androidxTestExt = "1.2.1"
-agp = "8.4.0"
-
+agp = "8.11.0"
 anvil = "2.5.0-beta11"
 coil = "2.6.0"
 composeBom = "2025.02.00"
@@ -24,6 +23,7 @@ mockk = "1.13.8"
 navigation = "2.8.8"
 retrofit = "2.11.0"
 turbine = "1.2.0"
+jetbrainsKotlinJvm = "2.0.21"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -91,4 +91,5 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 squareup-anvil = { id = "com.squareup.anvil", version.ref = "anvil" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 

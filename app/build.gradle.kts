@@ -1,42 +1,11 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
+    id("mob.android.app")
+    kotlin("kapt")
+
 }
 
 android {
     namespace = "com.arman.mobilebank"
-    compileSdk = 36
-
-    defaultConfig {
-        applicationId = "com.arman.mobilebank"
-        minSdk = 24
-        targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
-    buildFeatures {
-        compose = true
-    }
 }
 
 dependencies {
@@ -49,7 +18,23 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.navigation.compose)
+
+    kapt(libs.dagger.compiler)
+
+//    implementation(projects.core.data.local)
+//    implementation(projects.core.data.remote)
+//    implementation(projects.core.designSystem)
+//    implementation(projects.core.di)
+//    implementation(projects.core.formatter)
+//    implementation(projects.core.tooling.extension)
+//
+//    implementation(projects.feature.details.impl)
+//    implementation(projects.feature.history.impl)
+
     testImplementation(libs.junit)
+//    testImplementation(projects.core.tooling.test)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
